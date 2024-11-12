@@ -3,19 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  transition: all 0.2s;
+}
+
+p {
+  font-weight: 600
+}
+
+*::selection {
+  background-color: orange;
+  text-shadow: 5px 5px 5px black;
+  color: white;
+}
+
+* {
+  scrollbar-color: gray transparent;
+  scrollbar-width: thin;
+}
+
+.bgImg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.menu-transition-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.menu-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.menu-transition-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-transition-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms, transform 300ms;
 }
